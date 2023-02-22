@@ -27,97 +27,89 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>Installation Steps</h2>
 
-<h2>Step 1: Create a Virtual Machine in Microsoft Azure</h2>
+<h2>Create a Virtual Machine in Microsoft Azure</h2>
 <p>
 <img src="https://i.imgur.com/TT8okiI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create virtual machine in Microsoft Azure and ensure that the OS is Windows 10 with at least 4 virtual CPUs.
+First, you must create a virtual machine in Microsoft Azure and create your resource group (this is used to store all of the required resources that your virtual machine will produce). Next, name your virtual machine, choose the region, and select the operating system (Windows 10) that you want to use. You must select a virtual machine size to support the workload of the machine (4 vcpus, 16 GiB memory). This is helpful, so that your virtual machine is not moving slowly and determines the processing power, memory, and storage capacity. Also, make sure that your inbound support rules are selected to determine which ports are accessible from the internet (RDP 3389).
 </p>
 <br />
-
-<h2>Step 2: Install and Enable Internet Information Services (IIS) in Windows with CGI </h2>
+<h2>Install and Enable Internet Information Services (IIS) in Windows with CGI </h2>
 <p>
 <img src="https://i.imgur.com/34jHtDx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Once you have logged into the remote desktop connection, go to the control panel, select Programs and Turn on or off Windows features and select the following to enable IIS with CGI on Windows 10.
+After creating the virtual machine, go to the virtual machine that you created and copy the Public IP address to login to a remote desktop connection (use the username and password created, when creating your virtual machine). Once you have logged into the remote desktop connection, go to the control panel, select Programs and Turn on or off Windows features and select the following to enable IIS with CGI on Windows 10. IIS with CGI is required to have the osTicket system installed on your virtual machine.
 </p>
 <br />
-
-<h2>Step 3: Download and Install PHP Manager for IIS, Rewrite Module, and create the directory C:\PHP</h2>
+<h2>Download and Install PHP Manager for IIS, Rewrite Module, and create the directory C:\PHP</h2>
 <p>
 <img src="https://i.imgur.com/7kEgub5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Download and Install PHP Manager for IIS to run osTicket on the web browser. Also, download and Install the Rewrite Module and create a PHP folder in the windows directory.
+After enabling CGI, download and install PHP Manager for IIS and the Rewrite Module to your virtual machine. Next, create a PHP folder in the windows directory (C:).
 </p>
 <br />
-
-<h2>Step 4: Download and unzip PHP 7.3.8 in PHP folder </h2>
+<h2>Download and unzip PHP 7.3.8 in PHP folder </h2>
 <p>
 <img src="https://i.imgur.com/U8k2kuk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Download and extract all PHP files in to the previously created PHP folder.
+Download and extract all PHP files in to the previously created PHP folder under C:.
 </p>
 <br />
-
-<h2>Step 5: Download and install VC_redist and MySQL </h2>
+<h2>Download and install VC_redist and MySQL </h2>
 <p>
 <img src="https://i.imgur.com/EbyvS5F.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Download and install Microsoft Visual C++ and MYSQL. Ensure that MySQL is downloaded for "Typical Setup" and Launch Configuration Wizard (after insall) is checked. Continue to install as Standard Configuration, select Install as a Windows service and add a password for MySQL.
+Download and install Microsoft Visual C++ and MYSQL. Ensure that MySQL is downloaded for a "Typical Setup" and Launch Configuration Wizard (after insall) is checked. Continue to install as Standard Configuration, select Install as a Windows service and add a password for MySQL (remember that login for later :smile:).
 </p>
 <br />
-
-<h2>Step 6: Open IIS as an Admin and Register PHP in IIS </h2>
+<h2>Open IIS as an Admin and Register PHP in IIS </h2>
 <p>
 <img src="https://i.imgur.com/KdMo93q.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Run IIS as an Administrator and register PHP in IIS. Once PHP has been registered make sure to restart the server.
+After installing all of the required files, open IIS and run IIS as an Administrator and register PHP in IIS. Double-click on PHP --> Click on Register PHP new version. Follow the sequence in the C:\ directory, PHP -> php.cgi.exe. Once PHP has been registered make sure to restart the server, by clicking "Restart Server".
 </p>
 <br />
-
-<h2>Step 7: Reload IIS and Install osTicket </h2>
+<h2>Reload IIS and Install osTicket </h2>
 <p>
 <img src="https://i.imgur.com/TT8okiI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-After restarting the server, Install that osTicket file from the installation folder. Extract and copy the "upload folder" to c:\inetpub\wwwroot
+After restarting the server, Install the osTicket file from the installation folder. Extract and copy the "upload folder" to c:\inetpub\wwwroot (simply dragging and dropping the file and renaming it "osTicket")
 </p>
 <br />
-
-<h2>Step 8: Reload IIS and Browse to *:80 to review what extensions need to be enabled </h2>
+<h2>Reload IIS and Browse to *:80 to review what extensions need to be enabled </h2>
 <p>
 <img src="https://imgur.com/LLuHhla.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go to sites, default, osTicket and click on "Browse *:80" to open osTicket in a web browser
+Reopen IIS, Go to sites, default, osTicket and click on "Browse *:80" to open osTicket in a web browser.
 </p>
 <br />
-
-<h2>Step 9: Enabled extensions in IIS </h2>
+<h2>Enabled extensions in IIS</h2>
 <p>
 <img src="https://imgur.com/2IQ6WR2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go to IIS, sites, Defualt, osTicket, double click PHP Manager, click on Enable or disable an extension. Enable the following extensions and observe the changes in the osTicket site on the web browser
+Go to IIS, sites, Defualt, osTicket, double click PHP Manager, click on Enable or Disable an extension. Enable the following extensions: php_imap.dll, php_intl.dll, php_opcache.dll and observe the changes in the osTicket site on the web browser
 </p>
 <br />
 
-<h2>Step 10: Rename: ost-config in PHP folder </h2>
+<h2>Rename: ost-config in PHP folder </h2>
 <p>
 <img src="https://imgur.com/F7El4Yy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Remove sample from "ost-sampleconfig.php by following C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
+Go into file explorer and remove sample from "ost-sampleconfig.php by following C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php. Rename the file to "ost-config.php
 </p>
 <br />
 
-<h2>Step 11: Assign Permissions in ost-config.php and continue to setup osTicket </h2>
+<h2>Assign Permissions in ost-config.php and continue to setup osTicket </h2>
 <p>
 <img src="https://imgur.com/8ax66cQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -126,20 +118,20 @@ Go to ost-config.php, right click, select properties, select security, and selec
 </p>
 <br />
 
-<h2>Step 12: Download and install HeidiSQL and continue to setup osTicket in the browser </h2>
+<h2>Download and install HeidiSQL and continue to setup osTicket in the browser </h2>
 <p>
 <img src="https://imgur.com/R59XQRu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Download and install HeidiSQL. Add in password from MySQL setup to connect the database.
+Download and install HeidiSQL. Add in password from MySQL setup to connect the database. Once, connected to the database, continue to fill out the following information for osTicket in the web browser and click "Install Now"
 </p>
 <br />
 
-<h2>Step 13: Delete "setup" folder in osTicket file and Set permissions to Read only in ost-config.php </h2>
+<h2>Clean Up</h2>
 <p>
 <img src="https://imgur.com/yRw4fvm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Delete setup folder in osTicket and change permissions in ost-config.php
+Delete "setup" folder in osTicket file and Set permissions to Read only in ost-config.php
 </p>
 <br />
