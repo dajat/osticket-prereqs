@@ -68,7 +68,7 @@ Download and extract all PHP files in to the previously created PHP folder.
 <img src="https://i.imgur.com/EbyvS5F.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Download and install Microsoft Visual C++ and MYSQL. Ensure that MySQL is downloaded for "Typical Setup" and Launch Configuration Wizard (after insall) is checked. Continue to install as Standard Configuration and add a password for MySQL.
+Download and install Microsoft Visual C++ and MYSQL. Ensure that MySQL is downloaded for "Typical Setup" and Launch Configuration Wizard (after insall) is checked. Continue to install as Standard Configuration, select Install as a Windows service and add a password for MySQL.
 </p>
 <br />
 
