@@ -41,7 +41,7 @@ Create virtual machine in Microsoft Azure and ensure that the OS is Windows 10 w
 <img src="https://i.imgur.com/34jHtDx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create virtual machine in Microsoft Azure and ensure that the OS is Windows 10 with at least 4 virtual CPUs. Once you have logged into the remote desktop connection, go to the control panel, select Programs and Turn on or off Windows features and select the following to enable IIS with CGI on Windows 10.
+Once you have logged into the remote desktop connection, go to the control panel, select Programs and Turn on or off Windows features and select the following to enable IIS with CGI on Windows 10.
 </p>
 <br />
 
