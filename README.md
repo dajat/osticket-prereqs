@@ -92,7 +92,7 @@ After restarting the server, Install that osTicket file from the installation fo
 
 <h2>Step 8: Reload IIS and Browse to *:80 to review what extensions need to be enabled </h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/LLuHhla.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Go to sites, default, osTicket and click on "Browse *:80" to open osTicket in a web browser
@@ -101,7 +101,7 @@ Go to sites, default, osTicket and click on "Browse *:80" to open osTicket in a 
 
 <h2>Step 9: Enabled extensions in IIS </h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/2IQ6WR2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Go to IIS, sites, Defualt, osTicket, double click PHP Manager, click on Enable or disable an extension. Enable the following extensions and observe the changes in the osTicket site on the web browser
@@ -110,7 +110,7 @@ Go to IIS, sites, Defualt, osTicket, double click PHP Manager, click on Enable o
 
 <h2>Step 10: Rename: ost-config in PHP folder </h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/F7El4Yy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Remove sample from "ost-sampleconfig.php by following C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
@@ -119,16 +119,16 @@ Remove sample from "ost-sampleconfig.php by following C:\inetpub\wwwroot\osTicke
 
 <h2>Step 11: Assign Permissions in ost-config.php and continue to setup osTicket </h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/8ax66cQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Go to ost-config.php, right click, select properties, select security, and select advanced. Click on everyone, click on edit, and change to only read and read and view
 </p>
 <br />
 
-<h2>Step 12: Download and install HeidiSQL and contiue to setup osTicket in the browser </h2>
+<h2>Step 12: Download and install HeidiSQL and continue to setup osTicket in the browser </h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/R59XQRu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Download and install HeidiSQL. Add in password from MySQL setup to connect the database.
@@ -137,7 +137,7 @@ Download and install HeidiSQL. Add in password from MySQL setup to connect the d
 
 <h2>Step 13: Delete "setup" folder in osTicket file and Set permissions to Read only in ost-config.php </h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/yRw4fvm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Delete setup folder in osTicket and change permissions in ost-config.php
