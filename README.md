@@ -53,7 +53,7 @@ After enabling CGI, download and install PHP Manager for IIS and the Rewrite Mod
 <br />
 <h2>Download and unzip PHP 7.3.8 in PHP folder </h2>
 <p>
-<img src="https://i.imgur.com/U8k2kuk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/U8k2kuk.png" height="90%" width="90%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Download and extract all PHP files in to the previously created PHP folder under C:.
